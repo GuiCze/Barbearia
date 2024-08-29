@@ -1,5 +1,5 @@
 let proximoId = 1;
-const barbearia = require("..controllers/barbearias.js");
+const barbearia = require("../controllers/barbearias.js");
 
 const model = (body, id=proximoId++) => {
     if(body.nome != undefined &&

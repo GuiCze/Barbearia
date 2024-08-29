@@ -1,6 +1,6 @@
 const db = [];
 
-const model = require("../modesl/usuarios.js")
+const model = require("../models/usuarios.js")
 
 const store = (body) => {
     const novo = model(body);

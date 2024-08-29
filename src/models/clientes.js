@@ -3,8 +3,7 @@ let proximoId = 1;
 const model = (body, id=proximoId++) => {
     if(body.nome != undefined &&
        body.nome != "" &&
-       body.telefone != undefined &&
-       body.telefone != "" &&
+       body.telefone.length == '11' &&
        body.email != undefined &&
        body.email != "" &&
        body.email.includes("@") &&

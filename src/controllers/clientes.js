@@ -1,6 +1,6 @@
-const db = [];
-
 const model = require("../models/clientes.js")
+
+const db = [];
 
 const store = (body) => {
     const novo = model(body);

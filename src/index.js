@@ -10,8 +10,7 @@ const agendas = require("./controllers/agendas.js")
 const porta = 3000;
 const app = express();
 app.use(express.json());
-//app.use(cep_endereco);
-app.post
+
 
 app.post("/cliente", (req, res) => {
     const body = req.body;
@@ -100,15 +99,15 @@ app.delete("/franquia/:id", (req,res) => {
 
 //========================================================================
 
-app.post("/barbearia", cep_endereco, (req, res) => {
+app.post("/barbearia",cep_endereco, (req, res) => {
     const body = req.body;
     const code = barbearias.store(body);
     res.status(code).json();
 });
 
 app.get("/barbearia", (req, res) => {
-    const barbearias = barbearias.index();
-    res.json(barbearias);
+    const code = barbearias.index();
+    res.json(code);
 })
 
 app.get("/barbearia/:id", (req, res) => {
@@ -136,13 +135,13 @@ app.post("/barbeiro", (req, res) => {
 });
 
 app.get("/barbeiro", (req, res) => {
-    const barbeiros = barbeiros.index();
-    res.json(barbeiros);
+    const code = barbeiros.index();
+    res.json(code);
 })
 
 app.get("/barbeiro/:id", (req, res) => {
-    const barbeiro = barbeiros.show(req.params.id);
-    res.json(barbeiro);
+    const code = barbeiros.show(req.params.id);
+    res.json(code);
 });
 
 app.put("/barbeiro/:id", (req, res) => {

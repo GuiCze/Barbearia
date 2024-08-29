@@ -1,6 +1,6 @@
-const db = [];
-
 const model = require("../models/franquias.js")
+
+const db = [];
 
 const store = (body) => {
     const novo = model(body);

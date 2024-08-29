@@ -1,16 +1,16 @@
 let proximoId = 1;
 
-const usuario = require("../controllers/usuarios.js");
+const usuarios = require("../controllers/usuarios.js");
 
 const model = (body, id=proximoId++) => {
     if(body.nome != undefined &&
        body.nome != "" &&
-       usuario.show(idUsuario)
+       usuarios.show(body.usuario_id)
     ){
         return {
             id: id,
             nome: body.nome,
-            idUsuario: body.idUsuario
+            usuario_id: body.usuario_id
         }
     }
 }
