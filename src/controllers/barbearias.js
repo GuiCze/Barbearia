@@ -1,37 +1,6 @@
-const db = [];
-let proximoId = 1;
-const franquias = require("./franquias.js");
+const model = require('../models/barbearias.js')
 
-const model = (body, id=proximoId++) => {
-    if(body.nome != undefined &&
-       body.nome != "" &&
-       body.fotos != undefined &&
-       body.fotos.length > 0 &&
-       body.endereco.cep != undefined &&
-       body.endereco.cep != "" &&
-       body.endereco.cep != undefined &&
-       body.endereco.cep != "" &&
-       body.endereco.logradouro != undefined &&
-       body.endereco.logradouro != "" &&
-       body.endereco.bairro != undefined &&
-       body.endereco.bairro != "" &&
-       body.endereco.numero > 0 &&
-       !isNaN(body.endereco.numero) &&
-       !isNaN(body.coordenadas.latitude) &&
-       !isNaN(body.coordenadas.longitude) &&
-       franquias.show(body.franquia_id)
-    ){
-        return {
-            id: id,
-            nome: body.nome,
-            fotos: body.fotos,
-            endereco: body.endereco,
-            coordenadas: body.coordenadas,
-            complemento: body.complemento,
-            franquia: body.franquia_id
-        }
-    }
-}
+const db = [];
 
 const store = (body) => {
     const novo = model(body);
